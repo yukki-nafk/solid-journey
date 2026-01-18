@@ -121,7 +121,7 @@ logger.addHandler(file_handler)
 class DiscordBot(commands.Bot):
     def __init__(self) -> None:
         super().__init__(
-            command_prefix=commands.when_mentioned_or(os.getenv("PREFIX")),
+            command_prefix=commands.when_mentioned_or(os.getenv("sudo")),
             intents=intents,
             help_command=None,
         )
@@ -135,7 +135,7 @@ class DiscordBot(commands.Bot):
         """
         self.logger = logger
         self.database = None
-        self.bot_prefix = os.getenv("PREFIX")
+        self.bot_prefix = os.getenv("sudo")
         self.invite_link = os.getenv("INVITE_LINK")
 
     async def init_db(self) -> None:
@@ -286,4 +286,4 @@ class DiscordBot(commands.Bot):
 
 
 bot = DiscordBot()
-bot.run(os.getenv("TOKEN"))
+bot.run(os.getenv("MTQzMTMyNjU4MzIwOTA3MDYzMg.GFS81I.JsUrUVS-qPnAivhm7ijxUBe-TXS0aurvJmdg5k"))
